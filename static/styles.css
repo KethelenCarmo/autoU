@@ -1,0 +1,46 @@
+:root{
+  --bg:#f3f5f7;
+  --card:#ffffff;
+  --ink:#1c2430;
+  --muted:#6b7280;
+  --primary:#0a66ff;
+  --primary-600:#0957d6;
+  --ring: rgba(10,102,255,0.2);
+  --success:#10b981;
+}
+
+
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif;background:var(--bg);color:var(--ink)}
+
+.container{max-width:980px;margin:0 auto;padding:24px}
+
+.topbar{background:var(--card);border-bottom:1px solid #e5e7eb}
+.topbar h1{margin:0;font-size:20px}
+
+.card{background:var(--card);border:1px solid #e5e7eb;border-radius:16px;padding:24px;margin:20px 0;box-shadow:0 10px 25px rgba(16,24,40,.04)}
+
+.intro .yoda{margin:12px 0;padding:12px 16px;border-left:4px solid var(--primary);background:#f8fbff;color:#0f172a}
+.signature{color:var(--muted)}
+
+.title-row{display:flex;align-items:center;gap:8px}
+.title-row .badge{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:999px;background:#eef2ff;color:#3730a3;font-weight:700}
+
+.uploader{display:flex;flex-direction:column;gap:12px}
+.filelabel,.textlabel{font-weight:600}
+input[type=file]{padding:10px;border:1px solid #e5e7eb;border-radius:12px;background:#fafafa}
+textarea{width:100%;padding:14px;border:1px solid #e5e7eb;border-radius:12px;outline:none}
+textarea:focus, input[type=file]:focus{border-color:var(--primary);box-shadow:0 0 0 4px var(--ring)}
+
+.divider{display:flex;align-items:center;gap:12px;color:var(--muted);}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:#e5e7eb}
+
+button.primary{padding:14px 16px;border:none;border-radius:12px;background:var(--primary);color:white;font-weight:700;cursor:pointer;transition:.15s}
+button.primary:hover{background:var(--primary-600)}
+
+.result{margin-top:12px}
+.result.hidden{display:none}
+.result .pill{display:inline-block;background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0;border-radius:999px;padding:6px 12px;font-weight:700;margin-bottom:8px}
+
+.footer{padding:24px;color:var(--muted);text-align:center}

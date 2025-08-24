@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case Prático AutoU - Classificador de E-mails</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1>Case Prático AutoU - Desenvolvimento</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="classifier card">
+      <div class="title-row">
+        <h2>Classificador de E-mails</h2>
+        <span class="badge">@</span>
+      </div>
+
+      <form id="emailForm" class="uploader" enctype="multipart/form-data">
+        <label for="emailFile" class="filelabel">Upload (.txt ou .pdf)</label>
+        <input id="emailFile" name="emailFile" type="file" accept=".txt,.pdf" />
+        <div class="divider"><span>ou</span></div>
+        <label for="emailText" class="textlabel">Cole o texto do e-mail abaixo:</label>
+        <textarea id="emailText" name="emailText" rows="8" placeholder="Ex: Olá, gostaria de saber o status do meu pedido de suporte."></textarea>
+        <button type="submit" class="primary">Classificar E-mail</button>
+      </form>
+
+      <div id="result" class="result hidden">
+        <div class="pill"><span id="categoria">Categoria</span></div>
+        <h3>Resposta sugerida</h3>
+        <p id="resposta"></p>
+      </div>
+    </section>
+
+    <section class="about card">
+      <h2>Categorias de Classificação</h2>
+      <ul>
+        <li><strong>Produtivo</strong>: requer ação (ex.: suporte, atualização de caso, dúvidas de sistema).</li>
+        <li><strong>Improdutivo</strong>: sem ação imediata (ex.: felicitações, agradecimentos).</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© AutoU — Protótipo de avaliação. Feito com ❤️</small>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
